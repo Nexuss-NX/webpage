@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+<title>BMI Calculator</title>
+<link rel="stylesheet"  href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script language="JavaScript">
+
+function calculateBmi() {
+var weight = document.bmiForm.weight.value
+var height = document.bmiForm.height.value
+if(weight > 0 && height > 0){	
+var finalBmi = (703*weight)/(height*height)
+document.bmiForm.bmi.value = finalBmi
+if(finalBmi < 18.5){
+document.bmiForm.meaning.value = "That you are too thin."
+}
+if(finalBmi > 18.5 && finalBmi < 25){
+document.bmiForm.meaning.value = "That you are healthy."
+}
+if(finalBmi > 25){
+document.bmiForm.meaning.value = "That you have overweight."
+}
+}
+else{
+alert("Please Fill in everything correctly")
+}
+}
+
+</script>
+
+</head>
+<body>
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
+
+    <div class="wrapper">
+    <nav class="navbar">
+        <ul>
+         <li><a href="Project.html">Back</a></li>
+        </ul>
+    </nav>
+    <div class="center">
+        <form name="bmiForm">
+            Your Weight(lbs): <input type="text" name="weight" size="10"><br>
+            Your Height(inches): <input type="text" name="height" size="10"><br>
+            <input type="button" value="Calculate BMI" onclick="calculateBmi()"><br>
+            Your BMI: <input type="text" name="bmi" size="10"><br>
+            This Means: <input type="text" name="meaning" size="25"><br>
+            <input type="reset" value="Reset">
+            </form>
+            <p></p>
+    </div>
+    </div>  
+
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+
+</body>
+</html>

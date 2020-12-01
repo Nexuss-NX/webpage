@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+ <head>  
+
+     <meta charset="UTF-8">
+     <title>Custom Website</title>
+     <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
+
+    <div class="wrapper">
+        <nav class="navbar">
+            <img class="logo" src="icons5.png">
+            <ul>     
+                <li><a href="Project.html">Project</a></li>
+            </ul>
+        </nav>
+    <div class="center">
+    <p>Javascript can change HTML attributes values. This is a representation of XOR</p>
+
+    <img id="HTML NODE" src="XOR 1.png">
+    <ul>
+      <button
+      onclick="document.getElementById('HTML NODE').src='XOR 1.png'"
+      >
+      0 xor 0
+      </button>
+      <button
+      onclick="document.getElementById('HTML NODE').src='XOR 2.png'"
+      >
+      0 xor 1
+      </button>
+      <button onclick="document.getElementById('HTML NODE').src='XOR 3.png'">
+      1 xor 0
+      </button>
+      <button
+      onclick="document.getElementById('HTML NODE').src='XOR 4.png'">
+      1 xor 1
+      </button>
+    </ul>
+    </div>
+</div>
+ 
+<script type="text/javascript">
+    let progress = document.getElementById('progressbar');
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    window.onscroll = function(){
+        let progressHeight = (window.pageYOffset / totalHeight) * 100;
+        progress.style.height = progressHeight + "%";
+    }
+</script>
+
+
+</body>
+</html>

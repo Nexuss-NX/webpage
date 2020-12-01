@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <meta charset="UTF-8">
+    <title>Custom Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
+    
+    <div class="wrapper">
+        <nav class="navbar">
+            <img class="logo" src="icons5.png">
+            <ul>    
+                <li><a href="index.html">Course</a></li>
+                <li><a href="Project.html">Project</a></li>
+                <li><a href="Concept.html">Concept</a></li>
+                <li><a href="DataBase.html">DataBase</a></li>
+                <li><a href="Documentatiton.html">Documentation</a></li>
+                <li><a href="Dev Team.html">Dev Team</a></li>
+            </ul>
+        </nav>
+    <div class="center">
+        <h1>Course!</h1>
+        <h2> HI This course is an introduction to the fundamentals of Computer Science that will provide students with a foundation for future courses in Computer Science. The course is a broad survey of the discipline through topics that allow students to understand the capabilities of computer systems in terms of: the computer architecture; operating systems and computer networks; software and software development; data organization and visualization; and the potential of computing machines.</h2>
+        
+    </div>
+
+
+
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+
+
+
+</body>
+</html>

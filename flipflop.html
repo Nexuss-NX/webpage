@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+ <head>  
+
+     <meta charset="UTF-8">
+     <title>Custom Website</title>
+     <link rel="stylesheet" href="style.css">
+     
+
+</head>
+<body>
+    <div id="progressbar"></div>
+    <div id="scrollpath"></div>
+
+    <div class="wrapper">
+        <nav class="navbar">
+            <img class="logo" src="icons5.png">
+            <ul>     
+                <li><a href="Project.html">Back</a></li>
+            </ul>
+        </nav>
+    
+        <section>
+        <h2 style="color: black;"> Flip Flop Circuit </h2>
+
+        <p style="color: black;">This is a representation of a FLip Flop circuit .</p>
+         
+        
+        <p>
+        <button onclick="document.getElementById('myImage').src='fliponon.JPG'">on AND on</button>
+        <button onclick="document.getElementById('myImage').src='flipoffon.JPG'">off AND on</button>
+        
+        <center><img id="myImage" src="fliponon.JPG" style="width:400px;height:200px;"></center>
+        
+        <button onclick="document.getElementById('myImage').src='fliponoff.JPG'">on AND off</button>
+        <button onclick="document.getElementById('myImage').src='flipoffoff.JPG'">off AND off</button> 
+        </p>
+    </section>
+    </div>
+ 
+    <script type="text/javascript">
+        let progress = document.getElementById('progressbar');
+        let totalHeight = document.body.scrollHeight - window.innerHeight;
+        window.onscroll = function(){
+            let progressHeight = (window.pageYOffset / totalHeight) * 100;
+            progress.style.height = progressHeight + "%";
+        }
+    </script>
+
+</body>
+</html>
